@@ -35,7 +35,7 @@ public class Grocery {
         scanner.close();
     }
 
-    private void removeItems(String itemsToRemove) {
+    public static void removeItems(String itemsToRemove) {
         String[] splitItems = itemsToRemove.split(",");
         for(String item: splitItems){
             item = item.trim();
@@ -45,9 +45,10 @@ public class Grocery {
                 groceryList.remove(item);
             }
         }
+        sortItems();
     }
 
-    private void addItems(String itemsToAdd) {
+    public static void addItems(String itemsToAdd) {
         String[] splitItems = itemsToAdd.split(",");
         for(String item: splitItems){
             item = item.trim();
@@ -57,9 +58,10 @@ public class Grocery {
                 groceryList.add(item);
             }
         }
+        sortItems();
     }
 
-    private boolean checkItemsInList(String item) {
+    public static boolean checkItemsInList(String item) {
         return groceryList.contains(item);
     }
 
@@ -71,7 +73,7 @@ public class Grocery {
         }
     }
 
-    private static void sortItems() {
+    public static void sortItems() {
         Collections.sort(groceryList);
     }
 }
